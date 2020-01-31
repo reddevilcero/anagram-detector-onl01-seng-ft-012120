@@ -6,14 +6,13 @@ class Anagram
   end
 
   def match(array) 
-      anagrams = []
-      array.each do |word| 
-        check1 = word.size == self.word.size
-        check2 = (self.word.split('') - word.split('')).empty?
-        if check1 && check2
-          anagrams << word 
-        end
+      array.select do |word| 
+        word.split('').sort ==  self.word.split('').sort
+        # check1 = word.size == self.word.size
+        # check2 = (self.word.split('') - word.split('')).empty?
+        # if check1 && check2
+        #   anagrams << word 
+
       end
-      anagrams
   end
 end
